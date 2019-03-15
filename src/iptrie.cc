@@ -178,7 +178,7 @@ class IPTrie : public ObjectWrap {
       }
 
       String::Utf8Value ipaddress(args[0]->ToString());
-      int prefix_len = args[1]->ToUint32()->Value();
+      int prefix_len = args[1]->Uint32Value();
 
       IPTrie *iptrie = ObjectWrap::Unwrap<IPTrie>(args.This());
       Handle<Value> data = args[2];
@@ -207,7 +207,7 @@ class IPTrie : public ObjectWrap {
       }
 
       String::Utf8Value ipaddress(args[0]->ToString());
-      int prefix_len = args[1]->ToUint32()->Value();
+      int prefix_len = args[1]->Uint32Value();
 
       IPTrie *iptrie = ObjectWrap::Unwrap<IPTrie>(args.This());
       int success = iptrie->Del(*ipaddress, prefix_len);
