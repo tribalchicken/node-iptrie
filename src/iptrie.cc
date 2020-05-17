@@ -158,7 +158,7 @@ class IPTrie : public ObjectWrap {
       args.GetReturnValue().Set(args.This());
     }
 
-    static Local <String> CheckedString(Isolate *isolate, char *str) {
+    static Local <String> CheckedString(Isolate *isolate, const char *str) {
       return String::NewFromUtf8(isolate, "IPTrie", v8::NewStringType::kNormal)
 #ifdef NODE_VERSION_AT_LEAST(14, 0, 0)
         .ToLocalChecked()
