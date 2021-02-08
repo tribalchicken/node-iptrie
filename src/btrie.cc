@@ -38,6 +38,12 @@
 #include <stdint.h>
 #include <arpa/inet.h>
 #include <assert.h>
+
+#ifndef _WIN32
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+#endif
+
 // BITS should be either 32 or 128
 #define MAXBITS 128
 

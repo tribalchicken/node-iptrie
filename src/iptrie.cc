@@ -36,6 +36,11 @@
 #include <node.h>
 #include <node_object_wrap.h>
 
+#ifndef _WIN32
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+#endif
+
 using namespace v8;
 using namespace node;
 
