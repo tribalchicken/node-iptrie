@@ -70,7 +70,7 @@ void drop_tree(btrie *tree, void (*f)(void *)) {
 }
 static inline int match_bpm(btrie_node *node,
                             uint32_t *key, unsigned char match_len) {
-  register int i, m = (match_len-1)/32;
+  int i, m = (match_len-1)/32;
   if(match_len <= 0) return 1;
   for(i=0;i<=m;i++) {
     if(i<m) { /* we're matching a whole word */
